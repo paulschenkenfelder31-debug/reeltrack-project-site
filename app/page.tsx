@@ -15,8 +15,8 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     icon: Search,
-    title: "Live film search",
-    copy: "Find films through open movie data, then open a focused detail view with release year, genre, director and poster artwork when available.",
+    title: "Live TMDB dashboard",
+    copy: "Open directly into current TMDB charts, ranked films and a spotlight that updates from live movie data.",
   },
   {
     icon: Bookmark,
@@ -36,10 +36,10 @@ const features = [
 ];
 
 const roadmap = [
-  "Live trending, now-playing and upcoming movie rails",
-  "Cast, runtime, TMDB score and official trailer links",
-  "Related-movie recommendations on film detail pages",
-  "Expanded personal ratings, reviews and library statistics",
+  "New stats.fm-inspired dashboard with ranked movie charts",
+  "Reliable Home loading with independent TMDB requests and retry",
+  "Aligned cards, navigation, actions and film detail layouts",
+  "TMDB-only discovery with no Wikipedia or Wikidata fallback",
 ];
 
 export default function Home() {
@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v3.2.apk" download>
+          <a href="./downloads/ReelTrack-v4.0.apk" download>
             Download APK <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v3.2.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v3.2
+              <a href="./downloads/ReelTrack-v4.0.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download v4.0
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
@@ -132,7 +132,7 @@ export default function Home() {
           <p className="eyebrow">Open data, clear boundaries</p>
           <h2>Movie information in. Private opinions stay put.</h2>
           <p>
-            ReelTrack v3.2 searches and explores TMDB movie data, including
+            ReelTrack v4.0 searches and explores TMDB movie data, including
             poster artwork. Watchlists, ratings, diary entries and personal
             reviews are stored locally on the Android device.
           </p>
@@ -153,15 +153,15 @@ export default function Home() {
           <dl>
             <div><dt>Platform</dt><dd>Android</dd></div>
             <div><dt>Use</dt><dd>Personal, non-commercial</dd></div>
-            <div><dt>Status</dt><dd>Expanded in v3.2</dd></div>
+            <div><dt>Status</dt><dd>Redesigned in v4.0</dd></div>
           </dl>
         </aside>
       </section>
 
       <section id="roadmap" className="roadmap-section">
         <div className="roadmap-title">
-          <p className="eyebrow">Next on the reel</p>
-          <h2>New in ReelTrack v3.2</h2>
+          <p className="eyebrow">The next ReelTrack</p>
+          <h2>New in ReelTrack v4.0</h2>
         </div>
         <ol className="roadmap-list">
           {roadmap.map((item, index) => (
@@ -179,7 +179,7 @@ export default function Home() {
           <h2>What will you watch next?</h2>
         </div>
         <Button asChild size="lg" className="primary-cta">
-          <a href="./downloads/ReelTrack-v3.2.apk" download>
+          <a href="./downloads/ReelTrack-v4.0.apk" download>
             Download ReelTrack <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
