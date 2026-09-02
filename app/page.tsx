@@ -36,10 +36,10 @@ const features = [
 ];
 
 const roadmap = [
-  "TMDB-powered trending, now playing and upcoming films",
-  "Cast, crew, trailers and regional watch-provider data",
-  "Recommendations shaped by personal ratings",
-  "Custom lists, backup and richer yearly statistics",
+  "Live trending, now-playing and upcoming movie rails",
+  "Cast, runtime, TMDB score and official trailer links",
+  "Related-movie recommendations on film detail pages",
+  "Expanded personal ratings, reviews and library statistics",
 ];
 
 export default function Home() {
@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v3.1.apk" download>
+          <a href="./downloads/ReelTrack-v3.2.apk" download>
             Download APK <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v3.1.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v3.1
+              <a href="./downloads/ReelTrack-v3.2.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download v3.2
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
@@ -132,7 +132,7 @@ export default function Home() {
           <p className="eyebrow">Open data, clear boundaries</p>
           <h2>Movie information in. Private opinions stay put.</h2>
           <p>
-            ReelTrack v3 searches TMDB and displays its movie metadata and
+            ReelTrack v3.2 searches and explores TMDB movie data, including
             poster artwork. Watchlists, ratings, diary entries and personal
             reviews are stored locally on the Android device.
           </p>
@@ -148,12 +148,12 @@ export default function Home() {
           <h3>TMDB integration</h3>
           <p>
             ReelTrack uses TMDB for film search, release information, genres,
-            posters, descriptions, director credits and IMDb identifiers.
+            posters, descriptions, cast, trailers, recommendations and IMDb identifiers.
           </p>
           <dl>
             <div><dt>Platform</dt><dd>Android</dd></div>
             <div><dt>Use</dt><dd>Personal, non-commercial</dd></div>
-            <div><dt>Status</dt><dd>Integrated in v3</dd></div>
+            <div><dt>Status</dt><dd>Expanded in v3.2</dd></div>
           </dl>
         </aside>
       </section>
@@ -161,7 +161,7 @@ export default function Home() {
       <section id="roadmap" className="roadmap-section">
         <div className="roadmap-title">
           <p className="eyebrow">Next on the reel</p>
-          <h2>ReelTrack v3</h2>
+          <h2>New in ReelTrack v3.2</h2>
         </div>
         <ol className="roadmap-list">
           {roadmap.map((item, index) => (
@@ -179,7 +179,7 @@ export default function Home() {
           <h2>What will you watch next?</h2>
         </div>
         <Button asChild size="lg" className="primary-cta">
-          <a href="./downloads/ReelTrack-v3.0.apk" download>
+          <a href="./downloads/ReelTrack-v3.2.apk" download>
             Download ReelTrack <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>

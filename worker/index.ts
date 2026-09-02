@@ -74,6 +74,20 @@ async function handleTmdbRequest(
       language: "en-US",
       page: "1",
     });
+  } else if (url.pathname.startsWith("/api/tmdb/discover/")) {
+    if (!env.TMDB_READ_ACCESS_TOKEN) {
+      return jsonResponse({ error: "Movie discovery is not configured" }, 503);
+    }
+    const category = url.pathname.slice("/api/tmdb/discover/".length);
+    const paths: Record<string, string> = {
+      trending: "/trending/movie/week",
+      popular: "/movie/popular",
+      "now-playing": "/movie/now_playing",
+      upcoming: "/movie/upcoming",
+    };
+    tmdbPath = paths[category];
+    if (!tmdbPath) return jsonResponse({ error: "Unknown discovery category" }, 404);
+    params = new URLSearchParams({ language: "en-US", page: "1" });
   } else {
     const match = url.pathname.match(/^\/api\/tmdb\/movie\/(\d{1,10})$/);
     if (!match) return jsonResponse({ error: "Not found" }, 404);
@@ -82,7 +96,7 @@ async function handleTmdbRequest(
     }
     tmdbPath = `/movie/${match[1]}`;
     params = new URLSearchParams({
-      append_to_response: "credits,external_ids",
+      append_to_response: "credits,external_ids,videos,recommendations",
       language: "en-US",
     });
   }
@@ -117,7 +131,7 @@ async function handleWikidataSearch(query: string): Promise<Response> {
   const response = await fetch(`https://www.wikidata.org/w/api.php?${params}`, {
     headers: {
       Accept: "application/json",
-      "User-Agent": "ReelTrack-Movie-Service/3.1",
+      "User-Agent": "ReelTrack-Movie-Service/3.2",
     },
   });
   if (!response.ok) {

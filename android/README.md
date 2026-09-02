@@ -1,6 +1,6 @@
 # ReelTrack Android
 
-ReelTrack is a local-first Android movie tracker for Android 6.0 and newer. Version 3.1 adds resilient movie search and original vector pictograms throughout the interface.
+ReelTrack is a local-first Android movie tracker for Android 6.0 and newer. Version 3.2 adds live discovery rails, richer TMDB details, trailers, recommendations and expanded personal statistics.
 
 ## Movie service
 
