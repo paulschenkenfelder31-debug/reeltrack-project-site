@@ -57,16 +57,15 @@ async function handleTmdbRequest(
   if (request.method !== "GET") {
     return jsonResponse({ error: "Method not allowed" }, 405);
   }
-  if (!env.TMDB_READ_ACCESS_TOKEN) {
-    return jsonResponse({ error: "Movie service is not configured" }, 503);
-  }
-
   let tmdbPath: string;
   let params: URLSearchParams;
   if (url.pathname === "/api/tmdb/search") {
     const query = (url.searchParams.get("query") ?? "").trim();
     if (query.length < 2 || query.length > 80) {
       return jsonResponse({ error: "Query must be 2 to 80 characters" }, 400);
+    }
+    if (!env.TMDB_READ_ACCESS_TOKEN) {
+      return handleWikidataSearch(query);
     }
     tmdbPath = "/search/movie";
     params = new URLSearchParams({
@@ -78,6 +77,9 @@ async function handleTmdbRequest(
   } else {
     const match = url.pathname.match(/^\/api\/tmdb\/movie\/(\d{1,10})$/);
     if (!match) return jsonResponse({ error: "Not found" }, 404);
+    if (!env.TMDB_READ_ACCESS_TOKEN) {
+      return jsonResponse({ error: "Detailed movie data is not configured" }, 503);
+    }
     tmdbPath = `/movie/${match[1]}`;
     params = new URLSearchParams({
       append_to_response: "credits,external_ids",
@@ -101,7 +103,64 @@ async function handleTmdbRequest(
   });
 }
 
-function jsonResponse(body: Record<string, string>, status: number): Response {
+async function handleWikidataSearch(query: string): Promise<Response> {
+  const params = new URLSearchParams({
+    action: "wbsearchentities",
+    search: query,
+    language: "en",
+    uselang: "en",
+    type: "item",
+    limit: "20",
+    format: "json",
+    origin: "*",
+  });
+  const response = await fetch(`https://www.wikidata.org/w/api.php?${params}`, {
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "ReelTrack-Movie-Service/3.1",
+    },
+  });
+  if (!response.ok) {
+    return jsonResponse({ error: "Fallback movie search is unavailable" }, 502);
+  }
+
+  const payload = (await response.json()) as {
+    search?: Array<{ id?: string; label?: string; description?: string }>;
+  };
+  const candidates = payload.search ?? [];
+  const moviePattern = /\b(film|movie|motion picture|documentary|animation|animated)\b/i;
+  const movieMatches = candidates.filter((item) =>
+    moviePattern.test(item.description ?? ""),
+  );
+  const selected = (movieMatches.length > 0 ? movieMatches : candidates).slice(0, 20);
+  const results = selected.map((item, index) => {
+    const rawId = Number.parseInt((item.id ?? "").replace(/^Q/, ""), 10);
+    const id = Number.isSafeInteger(rawId) && rawId > 0 ? rawId : 2_000_000_000 + index;
+    const year = (item.description ?? "").match(/\b(18|19|20)\d{2}\b/)?.[0] ?? "";
+    return {
+      id,
+      title: item.label ?? "Untitled",
+      original_title: item.label ?? "Untitled",
+      overview: item.description ?? "Movie information supplied by Wikidata.",
+      release_date: year ? `${year}-01-01` : "",
+      genre_ids: [],
+      poster_path: null,
+      wikidata_id: item.id ?? null,
+    };
+  });
+  return jsonResponse(
+    {
+      page: 1,
+      results,
+      total_pages: 1,
+      total_results: results.length,
+      source: "wikidata",
+    },
+    200,
+  );
+}
+
+function jsonResponse(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), {
     status,
     headers: { "Content-Type": "application/json; charset=utf-8" },
