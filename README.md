@@ -23,10 +23,12 @@ npm run build
 
 The static site output is generated in `dist/client`.
 
-## Included download
+## Android app and included download
 
-The site currently distributes ReelTrack v2.0 for Android 6.0 and newer. Replace `public/downloads/ReelTrack-v2.0.apk` when shipping a new signed version, then update the visible version number and download links in `app/page.tsx`.
+The Android source lives in `android/`. GitHub Actions builds ReelTrack v3.0, publishes the installable APK as a workflow artifact, and includes it in the deployed website at `public/downloads/ReelTrack-v3.0.apk`.
+
+The Android app calls the restricted TMDB proxy in `worker/index.ts`. Set `TMDB_READ_ACCESS_TOKEN` as a secret environment variable on the ReelTrack Sites project. The token is never stored in Git or compiled into the public APK.
 
 ## Data and privacy
 
-The current Android beta searches Wikidata and may display Wikimedia Commons imagery. Watchlists, ratings, diary entries and private reviews are kept on the Android device. TMDB integration is planned for richer metadata, posters, credits, trailers, recommendations and regional provider availability.
+ReelTrack uses TMDB for movie search, metadata, posters, credits and IMDb identifiers. Watchlists, ratings, diary entries and private reviews are kept on the Android device.

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ReelTrack — Android Film Diary",
   description:
     "ReelTrack is a private, non-commercial Android app for discovering films, building a watchlist, rating movies and keeping a personal viewing diary.",
+  ...(process.env.GITHUB_ACTIONS
+    ? {}
+    : { other: { "codex-preview": "development" } }),
   icons: {
     icon: "./favicon.svg",
     shortcut: "./favicon.svg",

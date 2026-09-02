@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v2.0.apk" download>
+          <a href="./downloads/ReelTrack-v3.0.apk" download>
             Download APK <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v2.0.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v2.0
+              <a href="./downloads/ReelTrack-v3.0.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download v3.0
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
@@ -132,29 +132,28 @@ export default function Home() {
           <p className="eyebrow">Open data, clear boundaries</p>
           <h2>Movie information in. Private opinions stay put.</h2>
           <p>
-            The current beta searches Wikidata and can display imagery from
-            Wikimedia Commons. Watchlists, ratings, diary entries and personal
+            ReelTrack v3 searches TMDB and displays its movie metadata and
+            poster artwork. Watchlists, ratings, diary entries and personal
             reviews are stored locally on the Android device.
           </p>
           <div className="data-points">
             <div><ShieldCheck aria-hidden="true" /><span><strong>Private by default</strong> No public profile or social feed.</span></div>
-            <div><Database aria-hidden="true" /><span><strong>Transparent sources</strong> Open movie metadata is credited in the app.</span></div>
+            <div><Database aria-hidden="true" /><span><strong>Transparent sources</strong> TMDB is credited clearly inside the app.</span></div>
             <div><Heart aria-hidden="true" /><span><strong>Non-commercial beta</strong> No ads, subscriptions or sale of user data.</span></div>
           </div>
         </div>
-        <aside className="use-card" aria-label="Planned TMDB usage">
+        <aside className="use-card" aria-label="TMDB usage">
           <div className="use-card-icon"><Film aria-hidden="true" /></div>
-          <p className="use-label">Planned API usage</p>
+          <p className="use-label">Live movie data</p>
           <h3>TMDB integration</h3>
           <p>
-            A future version will use TMDB for richer film metadata, posters,
-            cast and crew, trailers, recommendations, release information and
-            regional streaming availability.
+            ReelTrack uses TMDB for film search, release information, genres,
+            posters, descriptions, director credits and IMDb identifiers.
           </p>
           <dl>
             <div><dt>Platform</dt><dd>Android</dd></div>
             <div><dt>Use</dt><dd>Personal, non-commercial</dd></div>
-            <div><dt>Status</dt><dd>In development</dd></div>
+            <div><dt>Status</dt><dd>Integrated in v3</dd></div>
           </dl>
         </aside>
       </section>
@@ -180,7 +179,7 @@ export default function Home() {
           <h2>What will you watch next?</h2>
         </div>
         <Button asChild size="lg" className="primary-cta">
-          <a href="./downloads/ReelTrack-v2.0.apk" download>
+          <a href="./downloads/ReelTrack-v3.0.apk" download>
             Download ReelTrack <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -189,7 +188,7 @@ export default function Home() {
       <footer>
         <a className="brand" href="#top"><span className="brand-mark" aria-hidden="true">R</span><span>ReelTrack</span></a>
         <p>Independent Android film tracker · 2026</p>
-        <p>Movie data is credited to its respective providers.</p>
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
       </footer>
     </main>
   );
