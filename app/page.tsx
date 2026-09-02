@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v3.0.apk" download>
+          <a href="./downloads/ReelTrack-v3.1.apk" download>
             Download APK <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v3.0.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v3.0
+              <a href="./downloads/ReelTrack-v3.1.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download v3.1
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
