@@ -144,17 +144,17 @@ body {
     --card-foreground: #f4f3f8;
     --popover: #14161f;
     --popover-foreground: #f4f3f8;
-    --primary: #a78bfa;
-    --primary-foreground: #0c0914;
+    --primary: #32d66d;
+    --primary-foreground: #06140c;
     --secondary: #1c1f2a;
     --secondary-foreground: #f4f3f8;
     --muted: #1a1c25;
     --muted-foreground: #9d9eac;
-    --accent: #b6ff6f;
-    --accent-foreground: #0d1208;
+    --accent: #32d66d;
+    --accent-foreground: #06140c;
     --border: #ffffff1a;
     --input: #ffffff20;
-    --ring: #a78bfa;
+    --ring: #32d66d;
     --radius: 1rem;
 }
 
@@ -171,8 +171,8 @@ body {
 }
 
 ::selection {
-  background: #b6ff6f;
-  color: #0d1208;
+  background: #32d66d;
+  color: #06140c;
 }
 
 .site-shell {
@@ -211,7 +211,7 @@ body {
   display: grid;
   place-items: center;
   border-radius: 11px;
-  background: linear-gradient(145deg, #b79cff, #7755e9);
+  background: linear-gradient(145deg, #46e57d, #178742);
   color: white;
   box-shadow: 0 10px 35px rgba(138, 101, 242, .28);
 }
@@ -238,7 +238,7 @@ body {
 .primary-cta {
   min-height: 46px;
   border-radius: 999px !important;
-  background: #b6ff6f !important;
+  background: #32d66d !important;
   color: #0c1208 !important;
   padding-inline: 22px !important;
   box-shadow: 0 16px 50px rgba(182,255,111,.12);
@@ -296,13 +296,13 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #b6ff6f;
-  box-shadow: 0 0 18px #b6ff6f;
+  background: #32d66d;
+  box-shadow: 0 0 18px #32d66d;
 }
 
 .eyebrow {
   margin: 27px 0 10px;
-  color: #b6ff6f;
+  color: #32d66d;
   font-size: .73rem;
   font-weight: 800;
   letter-spacing: .18em;
@@ -515,7 +515,7 @@ body {
   line-height: 1.6;
 }
 
-.data-points svg { width: 20px; height: 20px; margin-top: 2px; color: #b6ff6f; flex: 0 0 auto; }
+.data-points svg { width: 20px; height: 20px; margin-top: 2px; color: #32d66d; flex: 0 0 auto; }
 .data-points strong { color: #e7e6eb; display: block; }
 
 .use-card {
@@ -535,12 +535,12 @@ body {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  background: #b6ff6f;
+  background: #32d66d;
   color: #0d1208;
 }
 
 .use-card-icon svg { width: 23px; height: 23px; }
-.use-label { margin: 30px 0 8px; color: #b6ff6f; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.use-label { margin: 30px 0 8px; color: #32d66d; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .use-card h3 { margin: 0; font-size: 1.9rem; letter-spacing: -.04em; }
 .use-card > p:not(.use-label) { margin: 17px 0 28px; color: #93949f; font-size: .9rem; line-height: 1.7; }
 .use-card dl { margin: 0; }
@@ -558,7 +558,7 @@ body {
 .roadmap-list { list-style: none; margin: 0; padding: 0; }
 .roadmap-list li { display: grid; grid-template-columns: 60px 1fr; align-items: center; min-height: 86px; border-top: 1px solid rgba(255,255,255,.1); }
 .roadmap-list li:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
-.roadmap-list span { color: #b6ff6f; font-size: .72rem; font-weight: 800; letter-spacing: .1em; }
+.roadmap-list span { color: #32d66d; font-size: .72rem; font-weight: 800; letter-spacing: .1em; }
 .roadmap-list p { margin: 0; color: #d8d7dd; font-size: 1.05rem; line-height: 1.4; }
 
 .closing-section {

@@ -33,11 +33,11 @@ jobs:
       - name: Build ReelTrack Android app
         run: |
           gradle -p android --no-daemon assembleDebug
-          cp android/app/build/outputs/apk/debug/app-debug.apk public/downloads/ReelTrack-v4.0.apk
+          cp android/app/build/outputs/apk/debug/app-debug.apk public/downloads/ReelTrack-v4.1.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: ReelTrack-v4.0-Android
-          path: public/downloads/ReelTrack-v4.0.apk
+          name: ReelTrack-v4.1-Android
+          path: public/downloads/ReelTrack-v4.1.apk
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3

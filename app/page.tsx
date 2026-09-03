@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v4.0.apk" download>
+          <a href="./downloads/ReelTrack-v4.1.apk" download>
             Download APK <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v4.0.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v4.0
+              <a href="./downloads/ReelTrack-v4.1.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download v4.1
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
@@ -132,7 +132,7 @@ export default function Home() {
           <p className="eyebrow">Open data, clear boundaries</p>
           <h2>Movie information in. Private opinions stay put.</h2>
           <p>
-            ReelTrack v4.0 searches and explores TMDB movie data, including
+            ReelTrack v4.1 searches and explores TMDB movie data, including
             poster artwork. Watchlists, ratings, diary entries and personal
             reviews are stored locally on the Android device.
           </p>
@@ -153,7 +153,7 @@ export default function Home() {
           <dl>
             <div><dt>Platform</dt><dd>Android</dd></div>
             <div><dt>Use</dt><dd>Personal, non-commercial</dd></div>
-            <div><dt>Status</dt><dd>Redesigned in v4.0</dd></div>
+            <div><dt>Status</dt><dd>Neo Green theme in v4.1</dd></div>
           </dl>
         </aside>
       </section>
@@ -161,7 +161,7 @@ export default function Home() {
       <section id="roadmap" className="roadmap-section">
         <div className="roadmap-title">
           <p className="eyebrow">The next ReelTrack</p>
-          <h2>New in ReelTrack v4.0</h2>
+          <h2>New in ReelTrack v4.1</h2>
         </div>
         <ol className="roadmap-list">
           {roadmap.map((item, index) => (
@@ -179,7 +179,7 @@ export default function Home() {
           <h2>What will you watch next?</h2>
         </div>
         <Button asChild size="lg" className="primary-cta">
-          <a href="./downloads/ReelTrack-v4.0.apk" download>
+          <a href="./downloads/ReelTrack-v4.1.apk" download>
             Download ReelTrack <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
