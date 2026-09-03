@@ -25,7 +25,7 @@ The static site output is generated in `dist/client`.
 
 ## Android app and included download
 
-The Android source lives in `android/`. GitHub Actions builds ReelTrack v4.1, publishes the installable APK as a workflow artifact, and includes it in the deployed website at `public/downloads/ReelTrack-v4.1.apk`.
+The Android source lives in `android/`. GitHub Actions builds ReelTrack v4.2 and always refreshes `public/downloads/ReelTrack-latest.apk`, which is the permanent download link used by the website.
 
 The Android app calls the restricted TMDB proxy in `worker/index.ts`. Set `TMDB_READ_ACCESS_TOKEN` as a secret environment variable on the ReelTrack Sites project. The token is never stored in Git or compiled into the public APK.
 

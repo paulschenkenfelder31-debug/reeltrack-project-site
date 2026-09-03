@@ -1,6 +1,6 @@
 # ReelTrack Android
 
-ReelTrack is a local-first Android movie tracker for Android 6.0 and newer. Version 4.1 adds a charcoal-and-green data-app theme, icon-led navigation and persistent Violet, Ocean and Amber theme options in Settings.
+ReelTrack is a local-first Android movie tracker for Android 6.0 and newer. Version 4.2 adds a local Netflix companion: optional Android Usage Access shows Netflix time from the past 24 hours, while titles can be explicitly marked as watched on Netflix from a film detail page.
 
 ## Movie service
 

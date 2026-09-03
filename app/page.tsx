@@ -36,10 +36,10 @@ const features = [
 ];
 
 const roadmap = [
-  "New stats.fm-inspired dashboard with ranked movie charts",
-  "Reliable Home loading with independent TMDB requests and retry",
-  "Aligned cards, navigation, actions and film detail layouts",
-  "TMDB-only discovery with no Wikipedia or Wikidata fallback",
+  "Permanent latest-APK download that updates with every release",
+  "Netflix companion with optional local usage-time tracking",
+  "Mark a film as watched on Netflix from its detail screen",
+  "Device-local tracking with no Netflix account login or title scraping",
 ];
 
 export default function Home() {
@@ -56,8 +56,8 @@ export default function Home() {
           <a href="#roadmap">Roadmap</a>
         </nav>
         <Button asChild className="nav-download">
-          <a href="./downloads/ReelTrack-v4.1.apk" download>
-            Download APK <ArrowDownToLine aria-hidden="true" />
+          <a href="./downloads/ReelTrack-latest.apk" download>
+            Download latest <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
       </header>
@@ -76,8 +76,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg" className="primary-cta">
-              <a href="./downloads/ReelTrack-v4.1.apk" download>
-                <ArrowDownToLine aria-hidden="true" /> Download v4.1
+              <a href="./downloads/ReelTrack-latest.apk" download>
+                <ArrowDownToLine aria-hidden="true" /> Download latest
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="secondary-cta">
@@ -132,7 +132,7 @@ export default function Home() {
           <p className="eyebrow">Open data, clear boundaries</p>
           <h2>Movie information in. Private opinions stay put.</h2>
           <p>
-            ReelTrack v4.1 searches and explores TMDB movie data, including
+            ReelTrack v4.2 searches and explores TMDB movie data, including
             poster artwork. Watchlists, ratings, diary entries and personal
             reviews are stored locally on the Android device.
           </p>
@@ -153,7 +153,7 @@ export default function Home() {
           <dl>
             <div><dt>Platform</dt><dd>Android</dd></div>
             <div><dt>Use</dt><dd>Personal, non-commercial</dd></div>
-            <div><dt>Status</dt><dd>Neo Green theme in v4.1</dd></div>
+            <div><dt>Status</dt><dd>Netflix companion in v4.2</dd></div>
           </dl>
         </aside>
       </section>
@@ -161,7 +161,7 @@ export default function Home() {
       <section id="roadmap" className="roadmap-section">
         <div className="roadmap-title">
           <p className="eyebrow">The next ReelTrack</p>
-          <h2>New in ReelTrack v4.1</h2>
+          <h2>New in ReelTrack v4.2</h2>
         </div>
         <ol className="roadmap-list">
           {roadmap.map((item, index) => (
@@ -179,8 +179,8 @@ export default function Home() {
           <h2>What will you watch next?</h2>
         </div>
         <Button asChild size="lg" className="primary-cta">
-          <a href="./downloads/ReelTrack-v4.1.apk" download>
-            Download ReelTrack <ArrowDownToLine aria-hidden="true" />
+          <a href="./downloads/ReelTrack-latest.apk" download>
+            Download latest ReelTrack <ArrowDownToLine aria-hidden="true" />
           </a>
         </Button>
       </section>
